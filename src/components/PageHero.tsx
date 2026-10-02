@@ -1,16 +1,21 @@
 import Reveal from "./Reveal";
+import VideoBed from "./VideoBed";
 
 export default function PageHero({
   title,
   subtitle,
+  videoSrc = "/videos/mosque-tv.mp4",
+  videoPoster = "/videos/mosque-tv.jpg",
 }: {
   title: string;
   subtitle?: string;
+  videoSrc?: string;
+  videoPoster?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-emerald-deep pattern-geometric">
-      <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-emerald-deep/90" />
-      <div className="relative mx-auto max-w-5xl px-5 py-16 text-center md:px-8 md:py-20">
+    <section className="relative overflow-hidden">
+      <VideoBed src={videoSrc} poster={videoPoster} tone="emerald" lattice grain />
+      <div className="relative z-10 mx-auto max-w-5xl px-5 py-16 text-center md:px-8 md:py-20">
         <Reveal>
           <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-gold-bright/90">
             Alfalah Islamic Centre
@@ -25,7 +30,7 @@ export default function PageHero({
           ) : null}
         </Reveal>
       </div>
-      <div className="gold-hairline relative" />
+      <div className="gold-hairline relative z-10" />
     </section>
   );
 }

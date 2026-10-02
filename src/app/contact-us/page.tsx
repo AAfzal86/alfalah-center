@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: "Contact Us" };
 export default function ContactPage() {
   return (
     <>
-      <PageHero title="Get in Touch" subtitle={contactLead} />
+      <PageHero title="Get in Touch" subtitle={contactLead} videoSrc="/videos/trust.mp4" videoPoster="/videos/trust.jpg" />
       <section className="bg-cream py-16 md:py-20">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-2 md:px-8">
           <Reveal>
@@ -51,8 +51,7 @@ export default function ContactPage() {
             <div className="cream-panel rounded-3xl p-6 md:p-8">
               <h2 className="font-display text-xl font-semibold text-emerald">Send a message</h2>
               <p className="mt-2 text-sm text-muted">
-                The live site uses an Elementor form. This preview opens your email client with the
-                same admin address so nothing is invented or lost.
+                Prefer email? This form opens your mail app addressed to our admin inbox.
               </p>
               <form
                 className="mt-6 space-y-4"

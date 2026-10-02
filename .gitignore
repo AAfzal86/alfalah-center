@@ -44,3 +44,6 @@ next-env.d.ts
 scraped/
 .next/
 
+
+# local preview captures
+preview-shots/

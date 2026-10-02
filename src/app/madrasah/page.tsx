@@ -11,7 +11,7 @@ export const metadata: Metadata = { title: "Madrasah" };
 export default function MadrasahPage() {
   return (
     <>
-      <PageHero title="Madrasah" subtitle={madrasah.lead} />
+      <PageHero title="Madrasah" subtitle={madrasah.lead} videoSrc="/videos/madrasa.mp4" videoPoster="/videos/madrasa.jpg" />
       <section className="bg-cream py-16 md:py-20">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 md:grid-cols-2 md:px-8">
           <Reveal>

@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: "About Us" };
 export default function AboutPage() {
   return (
     <>
-      <PageHero title="About Us" subtitle="Who We Are" />
+      <PageHero title="About Us" subtitle="Who we are and what guides our work" videoSrc="/videos/facilities.mp4" videoPoster="/videos/facilities.jpg" />
       <section className="bg-cream py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-5 md:px-8">
           <Reveal>
@@ -57,7 +57,7 @@ export default function AboutPage() {
             <p className="mt-4 text-base leading-relaxed text-charcoal/85">{specialNeeds.body}</p>
           </Reveal>
           <Reveal className="mt-12">
-            <h2 className="font-display text-2xl font-semibold text-emerald">Change a Life Today</h2>
+            <h2 className="font-display text-2xl font-semibold text-emerald">Get involved</h2>
             <p className="mt-4 text-base leading-relaxed text-charcoal/85">{about.changeALife}</p>
           </Reveal>
         </div>

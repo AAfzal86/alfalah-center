@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: `%s · ${brand.name}`,
   },
   description:
-    "Alfalah Islamic Centre — a blessed sanctuary for worship, community, and spiritual growth in Southeast Edmonton. Daily prayers, Jumu’ah, madrasah, programs, and service.",
+    "Alfalah Islamic Centre in Southeast Edmonton — daily prayers, Jumu’ah, madrasah, programs, and community service.",
   keywords: [
     "Alfalah Center",
     "Alfalah Islamic Centre",

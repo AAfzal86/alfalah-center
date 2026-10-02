@@ -50,9 +50,9 @@ export const brand = {
       "ICNA Canada follows Fiqh Council of North America (FCNA) and we are pleased to announce that the Eid al-Fitr 1447 AH will be celebrated on Friday, March 20, 2026.",
   },
   hero: {
-    kicker: "REVIVE. REBUILD. REIMAGINE.",
-    h1: "Welcome To Alfalah Center",
-    sub: "A blessed sanctuary for worship, community, and spiritual growth in the heart of Edmonton. Join us in prayer, unity, and service to Allah and our community.",
+    kicker: "Southeast Edmonton · ICNA",
+    h1: "Welcome to Alfalah Center",
+    sub: "A place for worship, learning, and community in Southeast Edmonton. Join us for prayer, programs, and service.",
     hadith:
       "Whoever builds a masjid for the sake of Allah... Allah will build for him something like it in Paradise",
     hadithSource: "Sahih Al-Bukhari",

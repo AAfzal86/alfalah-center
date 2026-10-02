@@ -11,7 +11,7 @@ export const metadata: Metadata = { title: "Special Needs" };
 export default function SpecialNeedsPage() {
   return (
     <>
-      <PageHero title="Special Needs" subtitle={specialNeeds.lead} />
+      <PageHero title="Special Needs" subtitle={specialNeeds.lead} videoSrc="/videos/mosque-tv.mp4" videoPoster="/videos/mosque-tv.jpg" />
       <section className="bg-cream py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-5 md:px-8">
           <Reveal>

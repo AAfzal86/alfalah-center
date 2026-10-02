@@ -1,124 +1,124 @@
-/** Verbatim marketing copy scraped from alfalahcenter.ca — do not invent claims. */
+/** Site copy grounded in alfalahcenter.ca — facts preserved; awkward lines lightly modernized. */
 
 export const atAlfalah = [
-  "Alfalah Center has been established to cater the needs of the Edmonton southeast muslim community.",
-  "Daily five time prayers and Jumma prayers.",
-  "Youth Activities.",
-  "Communal area for social gatherings and to invite members from other faiths.",
-  "Dawah and interfaith activities.",
-  "Educational programs including a evening madrassa and weekend classes catering 400+ current students",
-  "Multi-purpose areas for meetings/halaqas/sisters activities",
-  "A food bank to support over 1000+ current clients",
+  "Alfalah Center serves the Muslim community of Southeast Edmonton.",
+  "Daily five-time prayers and Jumu’ah.",
+  "Youth activities.",
+  "Communal space for gatherings and welcoming guests from other faiths.",
+  "Dawah and interfaith programs.",
+  "Educational programs including evening madrasah and weekend classes for 400+ students.",
+  "Multi-purpose areas for meetings, halaqas, and sisters’ activities.",
+  "A food bank supporting 1,000+ clients.",
 ] as const;
 
 export const whatWeDoIntro =
-  "With the vision of building an exemplary Canadian Muslim community, it is very important to spread the word of Islam, develop those who accept to walk along, create an effective team of these people, and extend our hands to help all human kind without any bias. This transforms into the following four mandated roles that are necessary to realize our vision.";
+  "We work toward a strong Canadian Muslim community—sharing Islam with clarity, supporting people who want to grow in faith, building capable teams, and serving anyone in need without bias. That vision shapes four roles.";
 
 export const mandates = [
   {
     title: "Dawah & Outreach",
-    body: "With the vision of building an exemplary Canadian Muslim community, it is very important to spread the word of Islam and bridge understanding with the wider community.",
+    body: "Share the message of Islam and build understanding with the wider community.",
   },
   {
     title: "Organization",
-    body: "Our goal is to create an effective team of these people and manage a structured environment that realizes our vision for the moral development of our society.",
+    body: "Build effective teams and a clear structure so programs and services run well.",
   },
   {
     title: "Learning & Development",
-    body: "We develop those who accept to walk along, providing essential programs for all ages to help Muslims grow in their personal excellence, faith, and daily worship.",
+    body: "Offer programs for all ages that support faith, worship, and personal growth.",
   },
   {
     title: "Services for Humanity",
-    body: "We extend our hands to help all humankind without any bias, engaging in relief efforts and social services to support those in need throughout the community.",
+    body: "Help people in need through relief and social services, without bias.",
   },
 ] as const;
 
 export const about = {
   whoWeAre:
-    "Alfalah Center, run by the Edmonton chapter of the Islamic Circle of North America, engages in humanitarian relief, outreach, civic engagement, and education for the Muslim community.",
+    "Alfalah Center, run by the Edmonton chapter of the Islamic Circle of North America, serves through humanitarian relief, outreach, civic engagement, and education for the Muslim community.",
   whoWeAreLong:
-    "We are a Group of Muslims in Edmonton area running a local chapter of Islamic Circle of North America, a registered charitable organization in Canada. For the last 15 years, we have been engaged in various activities for the betterment of Muslim community as well as the community at large. These activities include but not limited to relief efforts for humanitarian causes, dawah & outreach, civic engagements,education & development and More.",
+    "We are Muslims in the Edmonton area running a local chapter of the Islamic Circle of North America, a registered charity in Canada. For the last 15 years we have worked for the betterment of the Muslim community and the wider public—relief for humanitarian causes, dawah and outreach, civic engagement, education and development, and more.",
   mission:
-    "Our goal is to seek the pleasure of Allah (SWT) by total submission to Him and through the propagation of the true and universal message of Islam.",
+    "Our goal is to seek the pleasure of Allah (SWT) through sincere submission to Him and by sharing the true, universal message of Islam.",
   vision:
-    "Our vision is to build an Exemplary Canadian Muslim Community – A Community that sets path towards personal excellence in faith, worship and morality and shares basis for the moral, social and economic development of the Canadian Society.",
+    "Our vision is to build an exemplary Canadian Muslim community—one that pursues excellence in faith, worship, and character, and contributes to the moral, social, and economic wellbeing of Canadian society.",
   changeALife:
-    "Our vision is to build an Exemplary Canadian Muslim Community. This community sets a path towards personal excellence in faith, worship, and morality, and shares the basis for the moral, social, and economic development of Canadian Society. Get in touch today and start making a difference.",
+    "We are building an exemplary Canadian Muslim community—rooted in faith, worship, and character, and open to serving the wider society. Get in touch and join the work.",
   changeALifeLegacy:
-    "As long as poverty, injustice & inequality persist, none of us can truly rest. It doesn’t take much to change a life, Get in touch today and start making the difference.",
+    "Meaningful change starts close to home. Reach out today—donate, volunteer, or join a program—and help strengthen our community.",
 };
 
 export const specialNeeds = {
-  lead: "The Alfalah Center is dedicated to offering resources, support, and an inclusive environment for community members with special needs and their families.",
-  body: "Alhamdulillah, The Alfalah Center is committed to supporting and partnering with MUHSEN in their efforts to help families with Special Needs. MUHSEN, Muslims Understanding and Helping Special Education Needs, certifies Masajid which work towards accommodating special needs community members.",
-  cta: "For more information about MUHSEN and providing support to special needs for community members, please watch this video with Sheikh Omar Suleiman or visit www.muhsen.org .",
+  lead: "Alfalah Center is committed to resources, support, and an inclusive environment for community members with special needs and their families.",
+  body: "Alhamdulillah, Alfalah Center partners with MUHSEN to support families with special needs. MUHSEN (Muslims Understanding and Helping Special Education Needs) certifies masajid that work to accommodate special-needs community members.",
+  cta: "For more about MUHSEN and supporting special-needs community members, watch this video with Sheikh Omar Suleiman or visit www.muhsen.org.",
 };
 
 export const programsIntro =
-  "Discover a wide range of spiritual, educational, and community-driven services designed to support every member of our family, from youth to adults.";
+  "Spiritual, educational, and community programs for youth, adults, and families.";
 
 export const programs = [
   {
     title: "Full Function Mosque (Men & Women)",
-    body: "Our center provides a dedicated and inclusive prayer space for both men and women, fostering a peaceful environment for daily worship, reflection, and spiritual connection for all.",
+    body: "Inclusive prayer space for men and women—daily worship, reflection, and spiritual connection.",
   },
   {
     title: "Madrasah (Girls & Boys)",
-    body: "We offer a structured and comprehensive Madrasah program that provides essential Islamic education for children, focusing on Quranic recitation, foundational religious values, and character development.",
+    body: "Structured Islamic education for children: Quranic recitation, foundational values, and character.",
   },
   {
     title: "Islamic education and services for all",
-    body: "Our mission is to provide inclusive learning opportunities for all community members, ensuring that every individual has access to vital religious knowledge and spiritual growth.",
+    body: "Learning opportunities so every community member can access religious knowledge and grow spiritually.",
   },
   {
     title: "Kids Weekend School",
-    body: "Our weekend programs engage young learners with interactive and fun lessons on Islamic history, character building, and basic Arabic studies to build a strong religious foundation.",
+    body: "Interactive weekend lessons on Islamic history, character, and basic Arabic for a strong foundation.",
   },
   {
     title: "Adults Religious Learning",
-    body: "These specialized sessions are designed for adults seeking to deepen their understanding of faith through guided study, meaningful discussion, and practical application of Islamic principles.",
+    body: "Guided study and discussion for adults who want to deepen faith and apply Islamic principles.",
   },
   {
     title: "Youth Tarbiyah Programs (Girls & Boys)",
-    body: "Focused on spiritual and personal growth, these programs help young men and women navigate modern challenges through an Islamic lens while building a strong sense of identity.",
+    body: "Spiritual and personal growth for young people navigating modern life through an Islamic lens.",
   },
   {
     title: "Food Bank",
-    body: "We are deeply committed to fighting local hunger by providing essential food items and resources to families in need, supporting over a thousand clients within our local area.",
+    body: "Essential food and resources for families in need—serving over a thousand local clients.",
   },
   {
     title: "Women’s Programs",
-    body: "Our center hosts dedicated events and workshops that empower women through social connection, leadership training, and spiritual support within a welcoming and comfortable community environment.",
+    body: "Events and workshops for women—connection, leadership, and spiritual support in a welcoming space.",
   },
   {
     title: "Family Nights",
-    body: "We bring the whole community together for evenings of fellowship and fun, strengthening the vital bonds between families and the Masjid through shared meals and activities.",
+    body: "Evenings of fellowship that strengthen bonds between families and the masjid through shared meals and activities.",
   },
   {
     title: "Workshops for Parenting, Marital Matters",
-    body: "These expert-led sessions provide practical advice and Islamic guidance on raising children in today’s world and maintaining healthy, respectful, and successful marital relationships.",
+    body: "Practical Islamic guidance on raising children and building healthy, respectful marriages.",
   },
   {
     title: "Youth Workshops on Emotional & Religious Aspects",
-    body: "We address the mental and emotional well-being of our youth by combining professional psychological insights with religious perspectives to foster resilience and peace.",
+    body: "Mental and emotional wellbeing for youth, combining practical insight with religious perspective.",
   },
   {
     title: "Summer Camps for Youth",
-    body: "Our seasonal camps offer a unique blend of physical activity, social bonding, and spiritual enrichment, providing a productive and fun Islamic environment during the break.",
+    body: "Seasonal camps that mix activity, friendship, and spiritual enrichment during the break.",
   },
 ] as const;
 
 export const madrasah = {
-  lead: "Nurturing the next generation through a foundation of Quranic knowledge, Islamic values, and spiritual growth.",
-  body: "Alfalah Center offers various programs for the religious learning of children",
+  lead: "Quranic knowledge, Islamic values, and spiritual growth for the next generation.",
+  body: "Alfalah Center offers programs for children’s religious learning, including evening madrasah and weekend classes.",
   register:
-    "Please fill in the application form. When a seat is available in your chosen program, the Alfalah Centre administration will inform you. Please download this form, fill it in, and bring it with a voided cheque or a PAD form from your bank account on the first day of the children’s madrasah.",
+    "Please fill in the application form. When a seat is available in your chosen program, Alfalah Centre administration will contact you. Download the form, complete it, and bring it with a voided cheque or a PAD form from your bank on the first day of children’s madrasah.",
 };
 
 export const galleryLead =
-  "Witness our community in action – from interfaith outreach and social services to our daily spiritual gatherings.";
+  "Community life at Alfalah—from outreach and social services to daily gatherings.";
 
-export const contactLead = "Contact us for more information about our Dawah Work.";
+export const contactLead = "Questions about our programs, volunteering, or visiting? We are here to help.";
 
 export const foodBank = {
   title: "Food Bank Timings",
@@ -132,7 +132,7 @@ export const jummahNote =
 export const dialerOptions = [
   {
     label: "Request a Quran translation",
-    detail: "An option to request a copy of the Quran translation.",
+    detail: "Request a copy of the Quran translation.",
     phone: "780-988-2239 Ext 1",
   },
   {
@@ -150,9 +150,9 @@ export const dialerOptions = [
 ] as const;
 
 export const donateCopy = {
-  headline: "EVERY LITTLE COUNTS",
+  headline: "Every gift counts",
   recurringLabel: "Recurring Donation",
-  oneTimeLabel: "One time Donation",
+  oneTimeLabel: "One-time Donation",
   funds: [
     "Food Bank",
     "Alfalah Center North (New)",
@@ -162,7 +162,7 @@ export const donateCopy = {
     "General Donation",
     "Iftar",
   ],
-  note: "Online donations are processed through ICNA Edmonton / DonorChoice. Use the fundraising links below — the same destinations linked from alfalahcenter.ca.",
+  note: "Online donations are processed through ICNA Edmonton / DonorChoice. Use the fundraising links below—the same destinations linked from alfalahcenter.ca.",
 };
 
 export const privacySections = [

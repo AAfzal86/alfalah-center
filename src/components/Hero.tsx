@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { MapPin, HeartHandshake, Clock } from "lucide-react";
 import { brand } from "@/lib/brand";
 import { easeOut } from "@/lib/motion";
+import VideoBed from "./VideoBed";
 
 export default function Hero() {
   const reduce = useReducedMotion();
@@ -19,19 +19,13 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[88svh] overflow-hidden md:min-h-[94svh]">
-      <Image
-        src="/gallery/C360_2019-05-11-04-09-14-004.jpg"
-        alt=""
-        fill
-        priority
-        className="object-cover object-center"
-        aria-hidden
+      <VideoBed
+        src="/videos/hero.mp4"
+        poster="/videos/hero.jpg"
+        tone="ink"
+        lattice
+        grain
       />
-      <div
-        className="absolute inset-0 bg-gradient-to-b from-charcoal/55 via-emerald-deep/70 to-emerald-deep/95"
-        aria-hidden
-      />
-      <div className="pattern-geometric-lattice absolute inset-0 opacity-40" aria-hidden />
 
       <div className="relative z-10 mx-auto flex min-h-[88svh] max-w-5xl flex-col items-center justify-center px-5 pb-16 pt-10 text-center md:min-h-[94svh] md:px-8 md:pb-24">
         <motion.p
@@ -86,7 +80,7 @@ export default function Hero() {
             className="gold-btn inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold tracking-wide"
           >
             <HeartHandshake className="h-4 w-4" aria-hidden />
-            Invest in Your Akhirah
+            Support the masjid
           </a>
           <a
             href="#prayer-times"

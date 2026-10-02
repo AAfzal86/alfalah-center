@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: "Donate" };
 export default function DonatePage() {
   return (
     <>
-      <PageHero title="Donate" subtitle={donateCopy.headline} />
+      <PageHero title="Donate" subtitle={donateCopy.headline} videoSrc="/videos/trust.mp4" videoPoster="/videos/trust.jpg" />
       <section className="bg-cream py-16 md:py-20">
         <div className="mx-auto max-w-4xl px-5 md:px-8">
           <Reveal>

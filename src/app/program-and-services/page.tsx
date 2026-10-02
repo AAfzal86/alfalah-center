@@ -10,7 +10,7 @@ export const metadata: Metadata = { title: "Programs & Services" };
 export default function ProgramsPage() {
   return (
     <>
-      <PageHero title="Programs & Services" subtitle={programsIntro} />
+      <PageHero title="Programs & Services" subtitle={programsIntro} videoSrc="/videos/statement.mp4" videoPoster="/videos/statement.jpg" />
       <section className="bg-cream py-16 md:py-20">
         <div className="mx-auto grid max-w-6xl gap-5 px-5 sm:grid-cols-2 md:px-8 lg:grid-cols-3">
           {programs.map((p) => (

@@ -10,7 +10,7 @@ export const metadata: Metadata = { title: "Gallery" };
 export default function GalleryPage() {
   return (
     <>
-      <PageHero title="Gallery" subtitle={galleryLead} />
+      <PageHero title="Gallery" subtitle={galleryLead} videoSrc="/videos/cta.mp4" videoPoster="/videos/cta.jpg" />
       <section className="bg-cream py-16 md:py-20">
         <div className="mx-auto columns-1 gap-4 px-5 sm:columns-2 md:px-8 lg:columns-3 lg:max-w-6xl">
           {galleryImages.map((img) => (

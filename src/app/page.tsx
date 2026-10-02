@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import PrayerTimes from "@/components/PrayerTimes";
 import ContactCTA from "@/components/ContactCTA";
 import Reveal from "@/components/Reveal";
+import VideoBed from "@/components/VideoBed";
 import { brand } from "@/lib/brand";
 import {
   atAlfalah,
@@ -21,8 +22,14 @@ export default function HomePage() {
       <PrayerTimes />
 
       {/* At Alfalah */}
-      <section className="bg-cream py-16 md:py-20">
-        <div className="mx-auto max-w-6xl px-5 md:px-8">
+      <section className="relative overflow-hidden py-16 md:py-20">
+        <VideoBed
+          src="/videos/facilities.mp4"
+          poster="/videos/facilities.jpg"
+          tone="cream"
+          grain
+        />
+        <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <Reveal>
               <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald">
@@ -50,7 +57,7 @@ export default function HomePage() {
                   href={brand.links.donateExpand}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex rounded-full border border-emerald/30 px-6 py-2.5 text-sm font-semibold text-emerald hover:bg-emerald/5"
+                  className="inline-flex rounded-full border border-emerald/30 bg-white/50 px-6 py-2.5 text-sm font-semibold text-emerald backdrop-blur-sm hover:bg-emerald/5"
                 >
                   Donate Now
                 </a>
@@ -72,8 +79,14 @@ export default function HomePage() {
       </section>
 
       {/* What We Do */}
-      <section className="bg-ivory py-16 md:py-20">
-        <div className="mx-auto max-w-6xl px-5 md:px-8">
+      <section className="relative overflow-hidden py-16 md:py-20">
+        <VideoBed
+          src="/videos/statement.mp4"
+          poster="/videos/statement.jpg"
+          tone="cream"
+          grain
+        />
+        <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8">
           <Reveal>
             <p className="text-center text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald">
               What We Do
@@ -85,7 +98,7 @@ export default function HomePage() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {mandates.map((m) => (
               <Reveal key={m.title}>
-                <article className="cream-panel flex h-full flex-col rounded-2xl p-6">
+                <article className="cream-panel flex h-full flex-col rounded-2xl bg-cream/90 p-6 backdrop-blur-sm">
                   <div className="icon-ring mb-4 flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold text-gold-bright">
                     ◆
                   </div>
@@ -129,17 +142,16 @@ export default function HomePage() {
 
       {/* Change a Life + dialer */}
       <section className="relative overflow-hidden py-16 md:py-20">
-        <Image
-          src="/images/home-footer.jpg"
-          alt=""
-          fill
-          className="object-cover"
-          aria-hidden
+        <VideoBed
+          src="/videos/cta.mp4"
+          poster="/videos/cta.jpg"
+          tone="ink"
+          lattice
+          grain
         />
-        <div className="absolute inset-0 bg-emerald-deep/85" aria-hidden />
-        <div className="relative mx-auto max-w-5xl px-5 text-center text-white md:px-8">
+        <div className="relative z-10 mx-auto max-w-5xl px-5 text-center text-white md:px-8">
           <Reveal>
-            <h2 className="font-display text-3xl font-semibold md:text-4xl">Change a Life Today</h2>
+            <h2 className="font-display text-3xl font-semibold md:text-4xl">Get involved</h2>
             <div className="gold-hairline mx-auto my-5 max-w-xs" />
             <p className="mx-auto max-w-2xl text-base leading-relaxed text-white/85">
               {about.changeALife}
