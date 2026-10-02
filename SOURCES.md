@@ -39,13 +39,14 @@ Skipped (utility / empty / spammy on live): `/test`, `/test-2`, `/payment-confir
 
 ---
 
-## Prayer times (Masjidal)
+## Prayer times (NizamOS)
 
-- Live site uses the **Masjidal** WordPress plugin (server-rendered board) + “Monthly Prayer Timetable Powered by MASJIDAL.COM”.  
-- Also: *“Please note that Jumu’ah Salah Iqamah is 30 minutes after the scheduled time.”*  
-- Redesign: `/api/prayer-times` fetches https://alfalahcenter.ca/ and parses Athan/Iqamah; UI credits Masjidal; links to https://mymasjidal.com/ and the live board.  
-- **Gap:** Masjidal is not a drop-in iframe. If parse fails, preview shows a note — official times remain on the live site / Masjidal.  
-- North campus uses NizamOS (different masjid). SE Masjid ID mentioned historically as `EdoleqK7` — **not** wired here without an official NizamOS widget URL from Abdullah.
+- Redesign embeds the **NizamOS Mosque TV** widget (same pattern as Alfalah Center North).  
+- Widget id `nizamos-prayer-12ca9fe6`, theme `emerald`, `layout=full`:  
+  `https://app.nizamos.ca/tv/widget/12ca9fe6d69ff4dd4148939499c42a71c7c891526fd8e7d8?theme=emerald&layout=full`  
+- React iframe + `postMessage` height resize (`nizamos-prayer-widget:height`).  
+- Emerald/gold rails frame the board. Jumu’ah note: Iqamah is 30 minutes after the scheduled time.  
+- Obsolete Masjidal scrape `/api/prayer-times` removed.
 
 ---
 
