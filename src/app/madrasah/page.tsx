@@ -45,8 +45,8 @@ export default function MadrasahPage() {
           <Reveal>
             <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl">
               <Image
-                src="/gallery/Madarasah.jfif_.jpeg"
-                alt="Madrasah at Alfalah Center"
+                src="/gallery/Image-41.webp"
+                alt="Learning session at Alfalah Center"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"

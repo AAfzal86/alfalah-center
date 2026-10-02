@@ -66,8 +66,8 @@ export default function HomePage() {
             <Reveal>
               <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl">
                 <Image
-                  src="/gallery/WhatsApp-Image-2026-05-18-at-10.04.41-PM.jpeg"
-                  alt="Alfalah Center community"
+                  src="/gallery/C360_2019-05-11-04-09-14-004.jpg"
+                  alt="Alfalah Center building exterior"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
