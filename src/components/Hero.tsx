@@ -1,11 +1,18 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { MapPin, HeartHandshake, Clock } from "lucide-react";
 import { brand } from "@/lib/brand";
 import { easeOut } from "@/lib/motion";
-import VideoBed from "./VideoBed";
+
+/** Scraped exterior from alfalahcenter.ca — original building hero (not stock video). */
+const HERO_PHOTO = "/gallery/C360_2019-05-11-04-09-14-004.jpg";
+
+/** Same ink overlay as VideoBed — keeps white hero type readable over the photo. */
+const INK_OVERLAY =
+  "bg-[linear-gradient(180deg,rgba(26,31,28,0.78)_0%,rgba(22,51,46,0.82)_50%,rgba(22,51,46,0.92)_100%),radial-gradient(ellipse_at_30%_20%,rgba(32,65,58,0.40),transparent_55%),radial-gradient(ellipse_at_90%_80%,rgba(201,168,76,0.10),transparent_40%)]";
 
 export default function Hero() {
   const reduce = useReducedMotion();
@@ -19,13 +26,21 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[88svh] overflow-hidden md:min-h-[94svh]">
-      <VideoBed
-        src="/videos/hero.mp4"
-        poster="/videos/hero.jpg"
-        tone="ink"
-        lattice
-        grain
-      />
+      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className={`absolute inset-0 ${motionOn ? "ken-burns" : ""}`}>
+          <Image
+            src={HERO_PHOTO}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </div>
+        <div className={`absolute inset-0 ${INK_OVERLAY}`} />
+        <div className="pattern-geometric-lattice absolute inset-0 opacity-50" />
+        <div className="video-grain absolute inset-0" />
+      </div>
 
       <div className="relative z-10 mx-auto flex min-h-[88svh] max-w-5xl flex-col items-center justify-center px-5 pb-16 pt-10 text-center md:min-h-[94svh] md:px-8 md:pb-24">
         <motion.p
