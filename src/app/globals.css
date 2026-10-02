@@ -44,7 +44,7 @@ body {
   background: var(--cream);
   color: var(--charcoal);
   font-family: var(--font-sans);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .font-display {
@@ -133,5 +133,12 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  /* Never leave scroll-reveal content invisible for a11y users */
+  [style*="opacity:0"] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
   }
 }

@@ -2,12 +2,20 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { MapPin, HeartHandshake, Clock } from "lucide-react";
 import { brand } from "@/lib/brand";
 import { easeOut } from "@/lib/motion";
 
 export default function Hero() {
   const reduce = useReducedMotion();
+  const [live, setLive] = useState(false);
+
+  useEffect(() => {
+    setLive(true);
+  }, []);
+
+  const motionOn = live && !reduce;
 
   return (
     <section className="relative min-h-[88svh] overflow-hidden md:min-h-[94svh]">
@@ -27,7 +35,7 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto flex min-h-[88svh] max-w-5xl flex-col items-center justify-center px-5 pb-16 pt-10 text-center md:min-h-[94svh] md:px-8 md:pb-24">
         <motion.p
-          initial={reduce ? false : { opacity: 0, y: 16 }}
+          initial={motionOn ? { opacity: 0, y: 16 } : false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: easeOut }}
           className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-gold-bright/90"
@@ -36,7 +44,7 @@ export default function Hero() {
         </motion.p>
 
         <motion.h1
-          initial={reduce ? false : { opacity: 0, y: 28 }}
+          initial={motionOn ? { opacity: 0, y: 28 } : false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.08, ease: easeOut }}
           className="font-display text-4xl font-semibold leading-[1.12] text-white drop-shadow-sm sm:text-5xl md:text-6xl"
@@ -45,7 +53,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p
-          initial={reduce ? false : { opacity: 0, y: 24 }}
+          initial={motionOn ? { opacity: 0, y: 24 } : false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.18, ease: easeOut }}
           className="mt-6 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg"
@@ -54,7 +62,7 @@ export default function Hero() {
         </motion.p>
 
         <motion.blockquote
-          initial={reduce ? false : { opacity: 0 }}
+          initial={motionOn ? { opacity: 0 } : false}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.28 }}
           className="mt-8 max-w-xl border-l-2 border-gold/60 pl-4 text-left text-sm italic text-white/75 md:text-base"
@@ -66,7 +74,7 @@ export default function Hero() {
         </motion.blockquote>
 
         <motion.div
-          initial={reduce ? false : { opacity: 0, y: 16 }}
+          initial={motionOn ? { opacity: 0, y: 16 } : false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.35, ease: easeOut }}
           className="mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-4"
@@ -99,7 +107,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.p
-          initial={reduce ? false : { opacity: 0 }}
+          initial={motionOn ? { opacity: 0 } : false}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.45 }}
           className="mt-8 text-sm text-white/65"

@@ -20,7 +20,11 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const isHome = pathname === "/";
-  const solid = scrolled || !isHome || open;
+
+  // Sticky nav sits in document flow above the hero (cream body behind), not
+  // overlaid on the dark hero image. Always use cream + dark emerald/charcoal
+  // link contrast. (Transparent white links only work with a fixed-over-hero nav.)
+  const elevated = scrolled || !isHome || open;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -36,13 +40,13 @@ export default function Nav() {
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-500 ${
-        solid
+        elevated
           ? "border-b border-gold/25 bg-cream/95 shadow-sm backdrop-blur-md"
-          : "bg-transparent"
+          : "border-b border-gold/15 bg-cream/95 backdrop-blur-md"
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-2.5 md:px-8 md:py-3">
-        <Logo variant={solid || !isHome ? "dark" : "light"} />
+        <Logo variant="dark" />
 
         <nav className="hidden items-center gap-6 xl:flex" aria-label="Primary">
           {links.map((l) => {
@@ -52,13 +56,9 @@ export default function Nav() {
                 key={l.href}
                 href={l.href}
                 className={`text-sm font-medium tracking-wide transition-colors ${
-                  solid || !isHome
-                    ? active
-                      ? "text-emerald"
-                      : "text-charcoal/80 hover:text-emerald"
-                    : active
-                      ? "text-gold-bright"
-                      : "text-white/85 hover:text-gold-bright"
+                  active
+                    ? "text-emerald"
+                    : "text-charcoal/80 hover:text-emerald"
                 }`}
               >
                 {l.label}
@@ -77,9 +77,7 @@ export default function Nav() {
 
         <button
           type="button"
-          className={`rounded-md px-2 py-1 text-sm font-medium xl:hidden ${
-            solid || !isHome ? "text-charcoal" : "text-white"
-          }`}
+          className="rounded-md px-2 py-1 text-sm font-medium text-charcoal xl:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
