@@ -4,7 +4,6 @@ import "./globals.css";
 import { brand } from "@/lib/brand";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import AnnouncementBar from "@/components/AnnouncementBar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -52,7 +51,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="min-h-screen antialiased">
-        <AnnouncementBar />
         <Nav />
         <main id="main">{children}</main>
         <Footer />

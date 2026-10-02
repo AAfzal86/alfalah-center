@@ -35,7 +35,6 @@ export const brand = {
     icnaEdmonton: "https://icnaedmonton.com/",
     icnaRelief: "https://www.icnareliefcanada.ca/",
     icnaSisters: "https://icnasisters.org/",
-    fiqhCouncil: "http://www.fiqhcouncil.org",
     muhsen: "https://www.muhsen.org",
     muhsenVideo: "https://www.youtube.com/watch?v=C6SwKvoy90w",
     masjidal: "https://mymasjidal.com/",
@@ -44,10 +43,6 @@ export const brand = {
     madrasahForm:
       "https://docs.google.com/forms/d/e/1FAIpQLSeQFsN1jjJNb_HgFxQuOCvOnvKvzmkPVFCR2CxIbl2LnkIkdg/viewform",
     padForm: "/docs/Alfalah-pre-authorized_payment_form.pdf",
-  },
-  announcement: {
-    eid:
-      "ICNA Canada follows Fiqh Council of North America (FCNA) and we are pleased to announce that the Eid al-Fitr 1447 AH will be celebrated on Friday, March 20, 2026.",
   },
   hero: {
     kicker: "Southeast Edmonton · ICNA",

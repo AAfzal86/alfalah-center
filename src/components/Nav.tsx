@@ -10,7 +10,7 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/about-us", label: "About Us" },
   { href: "/madrasah", label: "Madrasah" },
-  { href: "/program-and-services", label: "Programs & Services" },
+  { href: "/ongoing-programs", label: "Ongoing Programs" },
   { href: "/gallery", label: "Gallery" },
   { href: "/contact-us", label: "Contact Us" },
 ];

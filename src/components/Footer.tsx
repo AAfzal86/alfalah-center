@@ -4,6 +4,7 @@ import { brand } from "@/lib/brand";
 
 const quick = [
   { href: "/about-us", label: "About Us" },
+  { href: "/ongoing-programs", label: "Ongoing Programs" },
   { href: "/program-and-services", label: "Programs & Services" },
   { href: "/contact-us", label: "Contact Us" },
   { href: "/terms-conditions", label: "Terms & Conditions" },
