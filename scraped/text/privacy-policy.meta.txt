@@ -1,0 +1,23 @@
+=== privacy-policy ===
+IFRAMES:
+https://maps.google.com/maps?q=2401%2047%20St%20NW%2C%20Edmonton%2C%20AB%20T6L%204P6%2C%20Canada&#038;t=m&#038;z=16&#038;output=embed&#038;iwloc=near
+
+IMAGES:
+https://alfalahcenter.ca/wp-content/uploads/2025/08/Al-Falah-Center-White-Green-Logo-1.svg
+https://alfalahcenter.ca/wp-content/uploads/2026/02/Al-Falah-Center-Black-Green-Logo-1.svg
+https://alfalahcenter.ca/wp-content/uploads/2026/02/Al-Falah-Center-White-Green-Logo-1.svg
+https://alfalahcenter.ca/wp-content/uploads/2026/02/Vector-15.png
+https://alfalahcenter.ca/wp-content/uploads/2026/02/cropped-favicon-96x96-1-180x180.png
+https://alfalahcenter.ca/wp-content/uploads/2026/02/cropped-favicon-96x96-1-192x192.png
+https://alfalahcenter.ca/wp-content/uploads/2026/02/cropped-favicon-96x96-1-32x32.png
+
+EXT LINKS:
+http://www.fiqhcouncil.org
+https://docs.google.com/forms/d/e/1FAIpQLSeQFsN1jjJNb_HgFxQuOCvOnvKvzmkPVFCR2CxIbl2LnkIkdg/viewform
+https://donorchoice.ca/embedded/icnaedmonton/alfalahsouthexpansion
+https://donorchoice.ca/icnaedmonton
+https://donorchoice.ca/icnaedmonton/2982
+https://gmpg.org/xfn/11
+https://outorigin.com/
+https://www.facebook.com/alfalahcenteredmonton/
+https://www.instagram.com/icnaedmonton/
