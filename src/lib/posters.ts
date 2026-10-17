@@ -32,8 +32,8 @@ export const programPosters: ProgramPoster[] = [
       "Alfalah Madrasah Fall Semester 2026 Registration poster. What we teach: 1 Quran with Tajweed, 2 Seerah, 3 Aqidah, 4 Islamic Fiqh, 5 Islamic Duas. Weekday classes $70 per child, Quran and Islamic Studies, boys 8 to 14, Monday to Thursday 4:45 to 6:15 pm and 6:15 to 7:45 pm. Saturday classes $50 per child, Islamic Studies, boys 8 to 14 10 am to 12 pm and 12 to 2 pm, girls 8 to 14 12 to 2 pm. Sibling discount $10; study materials provided. Registration open now: evening school September 2nd 2026 to June 25th 2026, Saturday school September 6th 2026 to June 20th 2026. 2401 47 St NW, Edmonton, AB T6L 4P6. For more information call 780.988.2239 or visit alfalahcenter.ca/madrasah.",
     primary: {
       label: "Register",
-      href: "https://alfalahcenter.ca/madrasah",
-      sr: "(opens Alfalah Madrasah registration in a new tab)",
+      href: "/madrasah",
+      sr: "(Alfalah Madrasah registration page)",
     },
     secondary: { label: "Call 780.988.2239", href: "tel:+17809882239" },
   },
