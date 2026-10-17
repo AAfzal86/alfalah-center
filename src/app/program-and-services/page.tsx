@@ -15,7 +15,7 @@ export default function ProgramsPage() {
         <div className="mx-auto grid max-w-6xl gap-5 px-5 sm:grid-cols-2 md:px-8 lg:grid-cols-3">
           {programs.map((p) => (
             <Reveal key={p.title}>
-              <article className="cream-panel flex h-full flex-col rounded-2xl p-6 transition hover:-translate-y-0.5 hover:shadow-lg">
+              <article className="card-premium flex h-full flex-col p-6">
                 <h2 className="font-display text-lg font-semibold text-emerald">{p.title}</h2>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{p.body}</p>
                 {p.title.includes("Summer Camps") ? (

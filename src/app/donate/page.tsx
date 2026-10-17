@@ -15,7 +15,7 @@ export default function DonatePage() {
           <Reveal>
             <p className="text-base leading-relaxed text-charcoal/85">{donateCopy.note}</p>
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
-              <div className="cream-panel rounded-2xl p-6">
+              <div className="card-premium p-6">
                 <h2 className="font-display text-xl font-semibold text-emerald">
                   {donateCopy.recurringLabel}
                 </h2>
@@ -27,12 +27,12 @@ export default function DonatePage() {
                   href={brand.links.donateIcna}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="gold-btn mt-6 inline-flex rounded-full px-6 py-2.5 text-sm font-semibold"
+                  className="btn gold-btn mt-6"
                 >
                   Donate via ICNA Edmonton
                 </a>
               </div>
-              <div className="cream-panel rounded-2xl p-6">
+              <div className="card-premium p-6">
                 <h2 className="font-display text-xl font-semibold text-emerald">
                   {donateCopy.oneTimeLabel}
                 </h2>
@@ -44,7 +44,7 @@ export default function DonatePage() {
                   href={brand.links.donateIcnaFund}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="gold-btn mt-6 inline-flex rounded-full px-6 py-2.5 text-sm font-semibold"
+                  className="btn gold-btn mt-6"
                 >
                   One-time donation
                 </a>
@@ -58,7 +58,7 @@ export default function DonatePage() {
                 href={brand.links.donateExpand}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="gold-btn mt-5 inline-flex rounded-full px-8 py-3 text-sm font-semibold"
+                className="btn gold-btn mt-5"
               >
                 Donate Now
               </a>

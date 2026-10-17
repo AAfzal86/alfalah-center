@@ -22,7 +22,7 @@ export default function MadrasahPage() {
                 href={brand.links.madrasahForm}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="gold-btn inline-flex rounded-full px-6 py-2.5 text-sm font-semibold"
+                className="btn gold-btn"
               >
                 Application Form
               </a>
@@ -30,20 +30,20 @@ export default function MadrasahPage() {
                 href={brand.links.padForm}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex rounded-full border border-emerald/30 px-6 py-2.5 text-sm font-semibold text-emerald hover:bg-emerald/5"
+                className="btn btn-outline"
               >
                 Pad Form
               </a>
               <a
                 href="/madrassah-policies"
-                className="inline-flex rounded-full border border-emerald/30 px-6 py-2.5 text-sm font-semibold text-emerald hover:bg-emerald/5"
+                className="btn btn-outline"
               >
                 Madrassah Policies
               </a>
             </div>
           </Reveal>
           <Reveal>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl">
+            <div className="photo-frame group relative aspect-[4/3]">
               <Image
                 src="/gallery/Image-41.webp"
                 alt="Learning session at Alfalah Center"

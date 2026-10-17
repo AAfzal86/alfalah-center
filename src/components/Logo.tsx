@@ -25,7 +25,8 @@ export default function Logo({
         width={180}
         height={56}
         className="h-11 w-auto md:h-12"
-        priority
+        loading="eager"
+        fetchPriority="low"
       />
     </Link>
   );

@@ -29,7 +29,7 @@ export default function SpecialNeedsPage() {
                 href={brand.links.muhsenVideo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="gold-btn inline-flex rounded-full px-6 py-2.5 text-sm font-semibold"
+                className="btn gold-btn"
               >
                 Watch Sheikh Omar Suleiman video
               </a>
@@ -37,7 +37,7 @@ export default function SpecialNeedsPage() {
                 href={brand.links.muhsen}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex rounded-full border border-emerald/30 px-6 py-2.5 text-sm font-semibold text-emerald hover:bg-emerald/5"
+                className="btn btn-outline"
               >
                 www.muhsen.org
               </a>

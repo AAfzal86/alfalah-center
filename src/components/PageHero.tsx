@@ -1,4 +1,3 @@
-import Reveal from "./Reveal";
 import VideoBed from "./VideoBed";
 
 export default function PageHero({
@@ -13,22 +12,27 @@ export default function PageHero({
   videoPoster?: string;
 }) {
   return (
-    <section className="relative overflow-hidden">
-      <VideoBed src={videoSrc} poster={videoPoster} tone="emerald" lattice grain />
-      <div className="relative z-10 mx-auto max-w-5xl px-5 py-16 text-center md:px-8 md:py-20">
-        <Reveal>
-          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-gold-bright/90">
-            Alfalah Islamic Centre
+    <section className="relative isolate overflow-hidden">
+      <VideoBed src={videoSrc} poster={videoPoster} tone="emerald" lattice grain priority />
+      <div className="frame-corners hidden md:block" style={{ inset: "1.25rem 1.5rem" }} aria-hidden />
+      <div className="relative z-10 mx-auto max-w-5xl px-5 py-20 text-center md:px-8 md:py-28">
+        <p className="hero-rise eyebrow eyebrow-center text-gold-bright/90">Alfalah Islamic Centre</p>
+        <h1 className="hero-settle display-section mx-auto mt-5 max-w-3xl text-white md:text-[3.5rem]">
+          {title}
+        </h1>
+        <div
+          className="hero-rise gold-hairline mx-auto mt-6 w-24"
+          style={{ ["--d" as string]: "120ms" }}
+          aria-hidden
+        />
+        {subtitle ? (
+          <p
+            className="hero-rise lead mx-auto mt-6 max-w-2xl text-white/80"
+            style={{ ["--d" as string]: "180ms" }}
+          >
+            {subtitle}
           </p>
-          <h1 className="font-display text-3xl font-semibold text-white sm:text-4xl md:text-5xl">
-            {title}
-          </h1>
-          {subtitle ? (
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
-              {subtitle}
-            </p>
-          ) : null}
-        </Reveal>
+        ) : null}
       </div>
       <div className="gold-hairline relative z-10" />
     </section>

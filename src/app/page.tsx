@@ -5,6 +5,7 @@ import PrayerTimes from "@/components/PrayerTimes";
 import ContactCTA from "@/components/ContactCTA";
 import Reveal from "@/components/Reveal";
 import VideoBed from "@/components/VideoBed";
+import { HandHeart, BookOpen, Landmark, Megaphone, ArrowRight, Phone, Mail } from "lucide-react";
 import { brand } from "@/lib/brand";
 import {
   atAlfalah,
@@ -15,6 +16,8 @@ import {
   dialerOptions,
 } from "@/lib/content";
 
+const mandateIcons = [Megaphone, Landmark, BookOpen, HandHeart];
+
 export default function HomePage() {
   return (
     <>
@@ -22,7 +25,7 @@ export default function HomePage() {
       <PrayerTimes />
 
       {/* At Alfalah */}
-      <section className="relative overflow-hidden py-16 md:py-20">
+      <section className="section-y relative overflow-hidden">
         <VideoBed
           src="/videos/facilities.mp4"
           poster="/videos/facilities.jpg"
@@ -32,16 +35,15 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <Reveal>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald">
+              <p className="eyebrow text-emerald">
                 Southeast Edmonton
               </p>
-              <h2 className="mt-2 font-display text-3xl font-semibold text-charcoal md:text-4xl">
-                At Alfalah Center
-              </h2>
-              <ul className="mt-6 space-y-3">
+              <h2 className="display-section mt-4 text-charcoal">At Alfalah Center</h2>
+              <div className="gold-hairline my-6 w-24" aria-hidden />
+              <ul className="space-y-3.5">
                 {atAlfalah.map((item) => (
                   <li key={item} className="flex gap-3 text-sm leading-relaxed text-charcoal/85 md:text-base">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" aria-hidden />
+                    <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rotate-45 bg-gold" aria-hidden />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -49,7 +51,7 @@ export default function HomePage() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   href="/about-us"
-                  className="gold-btn inline-flex rounded-full px-6 py-2.5 text-sm font-semibold"
+                  className="btn gold-btn"
                 >
                   Our Mission
                 </Link>
@@ -57,14 +59,15 @@ export default function HomePage() {
                   href={brand.links.donateExpand}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex rounded-full border border-emerald/30 bg-white/50 px-6 py-2.5 text-sm font-semibold text-emerald backdrop-blur-sm hover:bg-emerald/5"
+                  className="btn btn-outline"
                 >
                   Donate Now
                 </a>
               </div>
             </Reveal>
-            <Reveal>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl">
+            <Reveal delay={0.1}>
+              <div className="photo-frame group relative aspect-[4/3]">
+                <div className="frame-corners" aria-hidden />
                 <Image
                   src="/gallery/C360_2019-05-11-04-09-14-004.jpg"
                   alt="Alfalah Center building exterior"
@@ -79,7 +82,7 @@ export default function HomePage() {
       </section>
 
       {/* What We Do */}
-      <section className="relative overflow-hidden py-16 md:py-20">
+      <section className="section-y relative overflow-hidden">
         <VideoBed
           src="/videos/statement.mp4"
           poster="/videos/statement.jpg"
@@ -88,42 +91,52 @@ export default function HomePage() {
         />
         <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8">
           <Reveal>
-            <p className="text-center text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald">
+            <p className="eyebrow eyebrow-center flex justify-center text-emerald">
               What We Do
             </p>
-            <p className="mx-auto mt-4 max-w-3xl text-center text-base leading-relaxed text-charcoal/80">
+            <div className="gold-hairline mx-auto my-6 w-24" aria-hidden />
+            <p className="lead mx-auto max-w-3xl text-center text-charcoal/80">
               {whatWeDoIntro}
             </p>
           </Reveal>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {mandates.map((m) => (
-              <Reveal key={m.title}>
-                <article className="cream-panel flex h-full flex-col rounded-2xl bg-cream/90 p-6 backdrop-blur-sm">
-                  <div className="icon-ring mb-4 flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold text-gold-bright">
-                    ◆
+            {mandates.map((m, i) => {
+              const Icon = mandateIcons[i % mandateIcons.length];
+              return (
+              <Reveal key={m.title} delay={0.06 * i}>
+                <article className="card-premium flex h-full flex-col p-6">
+                  <div className="mb-6 flex items-start justify-between">
+                    <div className="icon-ring flex h-11 w-11 items-center justify-center rounded-full text-gold-bright">
+                      <Icon className="h-5 w-5" aria-hidden />
+                    </div>
+                    <span className="card-index" aria-hidden>
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                   </div>
-                  <h3 className="font-display text-lg font-semibold text-emerald">{m.title}</h3>
+                  <h3 className="font-display text-xl font-semibold leading-snug text-emerald">{m.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted">{m.body}</p>
                 </article>
               </Reveal>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Special Needs teaser */}
-      <section className="bg-cream py-16 md:py-20">
+      <section className="section-y bg-cream">
         <div className="mx-auto max-w-5xl px-5 md:px-8">
           <Reveal>
-            <div className="grid items-center gap-8 rounded-3xl bg-emerald-deep p-8 text-white md:grid-cols-[1fr_auto] md:p-10">
+            <div className="relative isolate grid items-center gap-8 overflow-hidden rounded-[1.75rem] bg-emerald-deep p-8 text-white shadow-[0_30px_60px_-30px_rgba(22,51,46,0.6)] ring-1 ring-gold/30 md:grid-cols-[1fr_auto] md:p-12">
+              <div className="pattern-geometric-lattice absolute inset-0 -z-10 opacity-40" aria-hidden />
               <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-gold-bright/90">
+                <p className="eyebrow text-gold-bright/90">
                   Special Needs
                 </p>
-                <p className="mt-3 text-base leading-relaxed text-white/85">{specialNeeds.body}</p>
+                <p className="lead mt-4 text-white/85">{specialNeeds.body}</p>
                 <Link
                   href="/special-needs"
-                  className="gold-btn mt-6 inline-flex rounded-full px-6 py-2.5 text-sm font-semibold"
+                  className="btn gold-btn mt-6"
                 >
                   Learn more
                 </Link>
@@ -133,7 +146,7 @@ export default function HomePage() {
                 alt="MUHSEN"
                 width={200}
                 height={95}
-                className="mx-auto h-auto w-40 rounded-lg bg-white p-3"
+                className="mx-auto h-auto w-44 rounded-2xl bg-white p-4 shadow-lg ring-1 ring-gold/40"
               />
             </div>
           </Reveal>
@@ -141,7 +154,7 @@ export default function HomePage() {
       </section>
 
       {/* Change a Life + dialer */}
-      <section className="relative overflow-hidden py-16 md:py-20">
+      <section className="section-y relative overflow-hidden">
         <VideoBed
           src="/videos/cta.mp4"
           poster="/videos/cta.jpg"
@@ -151,9 +164,9 @@ export default function HomePage() {
         />
         <div className="relative z-10 mx-auto max-w-5xl px-5 text-center text-white md:px-8">
           <Reveal>
-            <h2 className="font-display text-3xl font-semibold md:text-4xl">Get involved</h2>
-            <div className="gold-hairline mx-auto my-5 max-w-xs" />
-            <p className="mx-auto max-w-2xl text-base leading-relaxed text-white/85">
+            <h2 className="display-section">Get involved</h2>
+            <div className="gold-hairline mx-auto my-6 w-24" aria-hidden />
+            <p className="lead mx-auto max-w-2xl text-white/85">
               {about.changeALife}
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -161,13 +174,13 @@ export default function HomePage() {
                 href={brand.links.donateExpand}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="gold-btn inline-flex rounded-full px-7 py-3 text-sm font-semibold"
+                className="btn gold-btn"
               >
                 Donate Now
               </a>
               <Link
                 href="/contact-us"
-                className="inline-flex rounded-full border border-white/40 px-7 py-3 text-sm font-semibold text-white hover:border-gold-bright hover:text-gold-bright"
+                className="btn btn-glass"
               >
                 Volunteer
               </Link>
@@ -177,17 +190,19 @@ export default function HomePage() {
           <div className="mt-12 grid gap-4 text-left sm:grid-cols-3">
             {dialerOptions.map((d) => (
               <Reveal key={d.label}>
-                <div className="rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-sm">
-                  <h3 className="font-semibold text-gold-bright">{d.label}</h3>
+                <div className="card-glass h-full p-6">
+                  <h3 className="font-display text-lg font-semibold text-gold-bright">{d.label}</h3>
                   <p className="mt-2 text-sm text-white/75">{d.detail}</p>
-                  <a href={brand.phoneHref} className="mt-3 block text-sm font-medium text-white hover:underline">
+                  <a href={brand.phoneHref} className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-gold-bright">
+                    <Phone className="h-3.5 w-3.5 text-gold-bright" aria-hidden />
                     {d.phone}
                   </a>
                   {"email" in d && d.email ? (
                     <a
                       href={`mailto:${d.email}`}
-                      className="mt-1 block text-sm text-white/80 hover:underline"
+                      className="mt-1.5 flex items-center gap-2 break-all text-sm text-white/80 transition-colors hover:text-gold-bright"
                     >
+                      <Mail className="h-3.5 w-3.5 shrink-0 text-gold-bright" aria-hidden />
                       {d.email}
                     </a>
                   ) : null}
@@ -199,10 +214,11 @@ export default function HomePage() {
       </section>
 
       {/* Fundraising strip */}
-      <section className="border-y border-gold/25 bg-cream-deep py-10">
-        <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-5 text-center md:flex-row md:px-8 md:text-left">
+      <section className="relative overflow-hidden border-y border-gold/25 bg-cream-deep py-12 md:py-14">
+        <div className="pattern-geometric-lattice pointer-events-none absolute inset-0 opacity-[0.08]" aria-hidden />
+        <div className="relative mx-auto flex max-w-5xl flex-col items-center justify-between gap-5 px-5 text-center md:flex-row md:px-8 md:text-left">
           <div>
-            <p className="font-display text-xl font-semibold text-emerald">
+            <p className="font-display text-2xl font-semibold text-emerald md:text-[1.75rem]">
               Fundraising for Alfalah South Expansion
             </p>
             <p className="mt-1 text-sm text-muted">
@@ -213,9 +229,10 @@ export default function HomePage() {
             href={brand.links.donateExpand}
             target="_blank"
             rel="noopener noreferrer"
-            className="gold-btn shrink-0 rounded-full px-7 py-3 text-sm font-semibold"
+            className="btn btn-lg gold-btn shrink-0"
           >
             Donate Now
+            <ArrowRight className="btn-icon-end h-4 w-4" aria-hidden />
           </a>
         </div>
       </section>
@@ -223,15 +240,16 @@ export default function HomePage() {
       <ContactCTA />
 
       {/* Map */}
-      <section className="bg-cream pb-16">
+      <section className="bg-cream pb-20 md:pb-28">
         <div className="mx-auto max-w-6xl px-5 md:px-8">
           <Reveal>
-            <h2 className="mb-4 font-display text-2xl font-semibold text-emerald">Our Location</h2>
-            <div className="overflow-hidden rounded-3xl border border-gold/30 shadow-lg">
+            <p className="eyebrow text-emerald">Visit</p>
+            <h2 className="display-section mb-8 mt-3 text-emerald">Our Location</h2>
+            <div className="photo-frame p-1.5">
               <iframe
                 title="Alfalah Center map"
                 src={brand.address.mapsEmbed}
-                className="h-[360px] w-full border-0"
+                className="h-[360px] w-full rounded-[1rem] border-0 md:h-[420px]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />

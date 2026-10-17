@@ -51,7 +51,7 @@ export default function OngoingProgramsPage() {
       <section className="bg-ivory py-14 md:py-16">
         <div className="mx-auto max-w-6xl px-5 md:px-8">
           <Reveal>
-            <p className="text-center text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald">
+            <p className="eyebrow eyebrow-center flex justify-center text-emerald">
               What We Do
             </p>
             <p className="mx-auto mt-4 max-w-3xl text-center text-base leading-relaxed text-muted">
@@ -61,7 +61,7 @@ export default function OngoingProgramsPage() {
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {mandates.map((m) => (
               <Reveal key={m.title}>
-                <article className="cream-panel h-full rounded-2xl p-6">
+                <article className="card-premium h-full p-6">
                   <div className="icon-ring mb-4 flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold text-gold-bright">
                     ◆
                   </div>
@@ -79,10 +79,10 @@ export default function OngoingProgramsPage() {
       <section className="bg-cream py-16 md:py-20">
         <div className="mx-auto max-w-6xl px-5 md:px-8">
           <Reveal>
-            <p className="text-center text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald">
+            <p className="eyebrow eyebrow-center flex justify-center text-emerald">
               At Alfalah
             </p>
-            <h2 className="mt-2 text-center font-display text-2xl font-semibold text-charcoal md:text-3xl">
+            <h2 className="mt-2 text-center font-display text-[clamp(1.6rem,1.25rem+1.3vw,2.3rem)] font-semibold leading-tight tracking-[-0.015em] text-charcoal">
               Programs that continue year-round
             </h2>
             <ul className="mx-auto mt-6 max-w-3xl space-y-2">
@@ -108,7 +108,7 @@ export default function OngoingProgramsPage() {
               const external = href?.startsWith("http");
               return (
                 <Reveal key={p.title}>
-                  <article className="cream-panel flex h-full flex-col rounded-2xl p-6 transition hover:-translate-y-0.5 hover:shadow-lg">
+                  <article className="card-premium flex h-full flex-col p-6">
                     <h3 className="font-display text-lg font-semibold text-emerald">
                       {p.title}
                     </h3>

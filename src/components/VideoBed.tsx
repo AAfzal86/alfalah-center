@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { useReducedMotion } from "framer-motion";
+import { prefersSaveData, useReducedMotion } from "@/lib/useReducedMotion";
 
 type Tone = "cream" | "emerald" | "ink";
 
@@ -27,6 +28,7 @@ export default function VideoBed({
   grain = true,
   className = "",
   minWidth = 768,
+  priority = false,
 }: {
   src: string;
   poster: string;
@@ -36,34 +38,32 @@ export default function VideoBed({
   className?: string;
   /** Skip video autoplay below this viewport width (desktop-first). */
   minWidth?: number;
+  /** Above-the-fold beds (page heroes) preload their poster. */
+  priority?: boolean;
 }) {
   const reduce = useReducedMotion();
   const videoRef = useRef<HTMLVideoElement>(null);
   const rootRef = useRef<HTMLDivElement>(null);
   const [canPlayVideo, setCanPlayVideo] = useState(false);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    if (reduce) {
-      setCanPlayVideo(false);
-      return;
-    }
     const mq = window.matchMedia(`(min-width: ${minWidth}px)`);
-    const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
-    const allowed = mq.matches && !connection?.saveData;
-    setCanPlayVideo(allowed);
-
-    const onChange = () => {
-      const conn = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
-      setCanPlayVideo(mq.matches && !conn?.saveData && !reduce);
+    const update = () => setCanPlayVideo(mq.matches && !prefersSaveData());
+    const id = window.requestAnimationFrame(update);
+    mq.addEventListener("change", update);
+    return () => {
+      window.cancelAnimationFrame(id);
+      mq.removeEventListener("change", update);
     };
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
-  }, [reduce, minWidth]);
+  }, [minWidth]);
+
+  const play = canPlayVideo && !reduce;
 
   useEffect(() => {
     const video = videoRef.current;
     const root = rootRef.current;
-    if (!video || !root || !canPlayVideo) return;
+    if (!video || !root || !play) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -77,18 +77,26 @@ export default function VideoBed({
     );
     observer.observe(root);
     return () => observer.disconnect();
-  }, [canPlayVideo]);
+  }, [play]);
 
   return (
     <div ref={rootRef} aria-hidden className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`}>
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${poster})` }}
+      {/* Optimized, lazy poster (AVIF/WebP) instead of a raw CSS background JPEG */}
+      <Image
+        src={poster}
+        alt=""
+        fill
+        sizes="100vw"
+        quality={60}
+        priority={priority}
+        className="object-cover object-center"
       />
-      {canPlayVideo && (
+      {play && (
         <video
           ref={videoRef}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="video-fade absolute inset-0 h-full w-full object-cover"
+          data-ready={ready ? "true" : "false"}
+          onPlaying={() => setReady(true)}
           src={src}
           poster={poster}
           muted

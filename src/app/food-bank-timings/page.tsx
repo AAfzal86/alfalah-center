@@ -13,7 +13,7 @@ export default function FoodBankPage() {
         <div className="mx-auto max-w-lg px-5 md:px-8">
           <Reveal>
             <div className="cream-panel rounded-3xl p-10 text-center">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald">
+              <p className="eyebrow text-emerald">
                 Open
               </p>
               <p className="mt-3 font-display text-3xl font-semibold text-charcoal">

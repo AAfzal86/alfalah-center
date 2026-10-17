@@ -40,7 +40,7 @@ export default function AboutPage() {
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {mandates.map((m) => (
               <Reveal key={m.title}>
-                <article className="cream-panel h-full rounded-2xl p-6">
+                <article className="card-premium h-full p-6">
                   <h3 className="font-display text-lg font-semibold text-emerald">{m.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted">{m.body}</p>
                 </article>

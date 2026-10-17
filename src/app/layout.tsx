@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { brand } from "@/lib/brand";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import RevealObserver from "@/components/RevealObserver";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -43,6 +44,10 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#16332e",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -54,6 +59,7 @@ export default function RootLayout({
         <Nav />
         <main id="main">{children}</main>
         <Footer />
+        <RevealObserver />
       </body>
     </html>
   );

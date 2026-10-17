@@ -7,10 +7,10 @@ export default function ContactCTA() {
       <div className="mx-auto max-w-5xl px-5 md:px-8">
         <Reveal>
           <div className="cream-panel rounded-3xl p-8 md:p-10">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald">
+            <p className="eyebrow text-emerald">
               Get in Touch
             </p>
-            <h2 className="mt-2 font-display text-2xl font-semibold text-charcoal md:text-3xl">
+            <h2 className="mt-2 font-display text-[clamp(1.6rem,1.25rem+1.3vw,2.3rem)] font-semibold leading-tight tracking-[-0.015em] text-charcoal">
               Interested in our Work?
             </h2>
             <div className="mt-6 grid gap-4 sm:grid-cols-3">
@@ -51,7 +51,7 @@ export default function ContactCTA() {
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="/contact-us"
-                className="gold-btn inline-flex rounded-full px-6 py-2.5 text-sm font-semibold"
+                className="btn gold-btn"
               >
                 Contact Us
               </a>
@@ -59,7 +59,7 @@ export default function ContactCTA() {
                 href={brand.links.donateExpand}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex rounded-full border border-emerald/30 px-6 py-2.5 text-sm font-semibold text-emerald hover:bg-emerald/5"
+                className="btn btn-outline"
               >
                 Donate Now
               </a>

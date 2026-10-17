@@ -14,7 +14,7 @@ export default function ContactPage() {
         <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-2 md:px-8">
           <Reveal>
             <div className="space-y-6">
-              <div className="cream-panel rounded-2xl p-6">
+              <div className="card-premium p-6">
                 <h2 className="font-display text-xl font-semibold text-emerald">Contact Imam</h2>
                 <a
                   href={`mailto:${brand.emails.imam}`}
@@ -23,7 +23,7 @@ export default function ContactPage() {
                   {brand.emails.imam}
                 </a>
               </div>
-              <div className="cream-panel rounded-2xl p-6">
+              <div className="card-premium p-6">
                 <h2 className="font-display text-xl font-semibold text-emerald">Call Us Now</h2>
                 <a
                   href={brand.phoneHref}
@@ -32,7 +32,7 @@ export default function ContactPage() {
                   {brand.phone} EXT 2
                 </a>
               </div>
-              <div className="cream-panel rounded-2xl p-6">
+              <div className="card-premium p-6">
                 <h2 className="font-display text-xl font-semibold text-emerald">Contact admin</h2>
                 <a
                   href={`mailto:${brand.emails.admin}`}
@@ -110,7 +110,7 @@ export default function ContactPage() {
                     className="w-full rounded-xl border border-emerald/20 bg-ivory px-4 py-2.5 outline-none ring-gold focus:ring-2"
                   />
                 </label>
-                <button type="submit" className="gold-btn rounded-full px-7 py-2.5 text-sm font-semibold">
+                <button type="submit" className="btn gold-btn">
                   Send Message
                 </button>
               </form>

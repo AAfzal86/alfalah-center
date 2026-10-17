@@ -20,7 +20,7 @@ export default function PoliciesPage() {
                 href={p.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cream-panel flex items-center justify-between rounded-2xl px-6 py-5 transition hover:-translate-y-0.5"
+                className="card-premium flex items-center justify-between px-6 py-5"
               >
                 <span className="font-display text-lg font-semibold text-emerald">{p.title}</span>
                 <span className="text-sm font-semibold text-accent">Download PDF</span>
