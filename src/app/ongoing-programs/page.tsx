@@ -3,6 +3,7 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import ContactCTA from "@/components/ContactCTA";
 import Reveal from "@/components/Reveal";
+import PosterStack from "@/components/PosterStack";
 import {
   programs,
   programsIntro,
@@ -154,6 +155,20 @@ export default function OngoingProgramsPage() {
         </div>
       </section>
 
+      {/* Program posters — sticky stack */}
+      <section id="program-posters" className="cg-posters relative bg-ivory py-20 md:py-28" aria-labelledby="program-posters-title">
+        <div className="mx-auto max-w-7xl px-5 md:px-10">
+          <Reveal>
+            <p className="eyebrow eyebrow-center flex justify-center text-emerald">Now Registering</p>
+            <h2 id="program-posters-title" className="cg-h2 mt-3 text-center text-emerald">Program posters</h2>
+            <div className="gold-hairline mx-auto my-6 w-24" aria-hidden />
+            <p className="lead mx-auto max-w-2xl text-center text-charcoal/80">Madrasah and weekend Islamic school for the 2026–27 year. Tap a poster to see it in full.</p>
+          </Reveal>
+          <div className="mt-12 md:mt-16">
+            <PosterStack />
+          </div>
+        </div>
+      </section>
       <ContactCTA />
     </>
   );

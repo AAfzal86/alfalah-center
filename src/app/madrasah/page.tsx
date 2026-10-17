@@ -3,6 +3,7 @@ import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import ContactCTA from "@/components/ContactCTA";
 import Reveal from "@/components/Reveal";
+import PosterStack from "@/components/PosterStack";
 import { madrasah } from "@/lib/content";
 import { brand } from "@/lib/brand";
 
@@ -53,6 +54,20 @@ export default function MadrasahPage() {
               />
             </div>
           </Reveal>
+        </div>
+      </section>
+      {/* Program posters — sticky stack */}
+      <section id="program-posters" className="cg-posters relative bg-ivory py-20 md:py-28" aria-labelledby="program-posters-title">
+        <div className="mx-auto max-w-7xl px-5 md:px-10">
+          <Reveal>
+            <p className="eyebrow eyebrow-center flex justify-center text-emerald">Registration 2026–27</p>
+            <h2 id="program-posters-title" className="cg-h2 mt-3 text-center text-emerald">Current posters</h2>
+            <div className="gold-hairline mx-auto my-6 w-24" aria-hidden />
+            <p className="lead mx-auto max-w-2xl text-center text-charcoal/80">Fall 2026 madrasah classes and the Sunday weekend Islamic school. Tap a poster to see it in full.</p>
+          </Reveal>
+          <div className="mt-12 md:mt-16">
+            <PosterStack />
+          </div>
         </div>
       </section>
       <ContactCTA />
