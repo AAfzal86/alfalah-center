@@ -77,7 +77,7 @@ export default function PosterStack({ ids }: { ids?: ProgramPoster["id"][] }) {
                   ))}
                 </ul>
                 <div className="cg-poster-actions mt-4 flex flex-wrap gap-2.5 sm:mt-5 md:mt-7">
-                  <a href={p.primary.href} target="_blank" rel="noopener noreferrer" className="btn gold-btn">
+                  <a href={p.primary.href} {...(p.primary.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="btn gold-btn">
                     {p.primary.label}
                     <ArrowUpRight className="btn-icon-end h-4 w-4" aria-hidden />
                     <span className="sr-only">{p.primary.sr}</span>
@@ -120,7 +120,7 @@ export default function PosterStack({ ids }: { ids?: ProgramPoster["id"][] }) {
             </div>
             <PosterPicture p={open} eager sizes="(min-width: 1000px) 960px, 100vw" className="cg-lightbox-img mx-auto block h-auto w-auto" />
             <div className="flex flex-wrap justify-center gap-2.5 pt-4">
-              <a href={open.primary.href} target="_blank" rel="noopener noreferrer" className="btn gold-btn">
+              <a href={open.primary.href} {...(open.primary.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="btn gold-btn">
                 {open.primary.label}
                 <ArrowUpRight className="btn-icon-end h-4 w-4" aria-hidden />
                 <span className="sr-only">{open.primary.sr}</span>

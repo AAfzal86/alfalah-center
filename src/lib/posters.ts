@@ -1,6 +1,6 @@
 /** Current program posters (supplied by Alfalah Center, Oct 2026). */
 export type ProgramPoster = {
-  id: "madrasah" | "mcna";
+  id: "madrasah" | "girls" | "mcna";
   base: string; // /posters/<base>-640|full.(webp|jpg)
   width: number;
   height: number;
@@ -36,6 +36,29 @@ export const programPosters: ProgramPoster[] = [
       sr: "(opens Alfalah Madrasah registration in a new tab)",
     },
     secondary: { label: "Call 780.988.2239", href: "tel:+17809882239" },
+  },
+  {
+    id: "girls",
+    base: "/posters/girls-quran-islamic-studies-saturday",
+    width: 1600,
+    height: 900,
+    eyebrow: "Saturday Classes for Girls",
+    title: "Quran & Islamic Studies",
+    caption:
+      "Nurturing confident Muslim girls through Quran, knowledge and character. Learn from an experienced teacher with over 23 years of teaching experience.",
+    facts: [
+      "Ages 6 and above",
+      "Saturdays · 12:00 PM – 2:00 PM",
+      "Quran, Islamic Studies, small class environment",
+    ],
+    alt:
+      "Al Falah Centre South Edmonton poster: Quran and Islamic Studies, Saturday classes for girls. Ages 6 and above, Saturdays 12:00 PM to 2:00 PM. Quran recitation with Tajweed and memorization; Islamic Studies covering Aqeedah, Fiqh, Sirah, Hadith and manners; small class environment with focused and supportive learning; building strong Islamic character based on Quran and Sunnah. A strong foundation today for a brighter tomorrow. Learn from an experienced teacher with over 23 years of teaching experience: Master's Degree in Islamic Studies (International Online University), Higher Diploma in Islamic Education, various online Quran and Hadith courses over two decades, Sahih Bukhari course, Fiqh of Salah course, experienced in teaching Tafseer, Hadith and Fiqh and has delivered several Islamic lectures at events and Masjid. For more information contact 780-988-2239. Al Falah Centre South, 2401 47 Street NW, Edmonton, AB T6L 4P6.",
+    primary: {
+      label: "Call 780-988-2239",
+      href: "tel:+17809882239",
+      sr: "(calls Al Falah Centre South)",
+    },
+    secondary: { label: "Get directions", href: "https://www.google.com/maps/search/?api=1&query=2401+47+Street+NW+Edmonton+AB+T6L+4P6" },
   },
   {
     id: "mcna",
