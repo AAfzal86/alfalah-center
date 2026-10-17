@@ -40,11 +40,11 @@ export default function RevealObserver() {
           root.classList.add("reveal-ready");
         }
       },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.04 },
     );
 
     const scan = () => {
-      document.querySelectorAll("[data-reveal]:not(.is-revealed)").forEach((el) => {
+      document.querySelectorAll("[data-reveal]:not(.is-revealed), [data-stage]:not(.is-revealed)").forEach((el) => {
         if (seen.has(el)) return;
         seen.add(el);
         io.observe(el);

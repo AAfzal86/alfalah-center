@@ -1,0 +1,158 @@
+/* ==========================================================================
+   v2 “Golden Courtyard” — Southeast campus. Warm sunrise light, courtyard
+   arches, emerald #20413a + sun gold #fec96b. All motion is time-based (on
+   load or when a section enters view); nothing is scrubbed or pinned to scroll.
+   Infinite ambient motion waits for html.motion-ready (load + 300 ms).
+   ========================================================================== */
+@layer components {
+:root { --sun: #fec96b; --court: #16332e; --arch: 50% 50% 1.75rem 1.75rem / 34% 34% 1.75rem 1.75rem; }
+
+.cg-h2 { font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.05; font-weight: 600; letter-spacing: -0.01em; }
+.cg-sun-text {
+  background: linear-gradient(95deg, #ffe3a3 0%, #fec96b 45%, #f0a94a 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* ---------- Hero ---------- */
+.cg-title { font-size: clamp(2.8rem, 7.4vw, 6rem); line-height: 1.02; letter-spacing: -0.015em; }
+.cg-word { display: inline-block; animation: cg-word 1s var(--ease-out) both; animation-delay: var(--d, 0ms); }
+.cg-in { animation: rise-in 1s var(--ease-out) both; animation-delay: var(--d, 0ms); }
+.cg-dawn {
+  background: linear-gradient(180deg, var(--court) 0%, var(--court) 62%, rgba(254, 201, 107, 0.55) 82%, transparent 100%);
+  transform: translate3d(0, -130%, 0);
+  animation: cg-dawn 2.4s cubic-bezier(0.7, 0, 0.2, 1) 0.15s backwards;
+  will-change: transform;
+}
+.cg-rays {
+  background: repeating-conic-gradient(from 200deg at 78% 30%, rgba(254, 201, 107, 0.13) 0deg 2deg, transparent 2deg 9deg);
+  -webkit-mask-image: radial-gradient(circle at 78% 30%, #000 0%, transparent 62%);
+  mask-image: radial-gradient(circle at 78% 30%, #000 0%, transparent 62%);
+  animation: cg-fade 2.4s ease 1s both;
+  will-change: opacity;
+}
+.cg-sun {
+  background: radial-gradient(circle, rgba(255, 227, 163, 0.95) 0%, rgba(254, 201, 107, 0.55) 35%, rgba(240, 169, 74, 0) 70%);
+  animation: cg-sunrise 2.6s cubic-bezier(0.2, 0.7, 0.2, 1) 0.4s both;
+  will-change: transform, opacity;
+}
+.cg-arch { border-radius: var(--arch); box-shadow: 0 40px 90px -40px rgba(0, 0, 0, 0.7); animation: cg-open 1.6s cubic-bezier(0.7, 0, 0.2, 1) 0.5s both; }
+.cg-arch-img { animation: cg-settle 2.8s var(--ease-out) 0.5s both; }
+.cg-arch-line { border: 1px solid rgba(254, 201, 107, 0.65); border-radius: var(--arch); animation: cg-fade 1.4s ease 1.6s both; }
+
+/* ---------- Ribbons ---------- */
+.cg-ribbon { overflow: hidden; white-space: nowrap; padding: 1rem 0; box-shadow: 0 18px 40px -22px rgba(22, 51, 46, 0.6); }
+.cg-ribbon-gold { background: linear-gradient(90deg, #f7c15a, var(--sun) 50%, #f7c15a); color: var(--emerald); transform: rotate(-2.2deg) scale(1.04); position: relative; z-index: 2; }
+.cg-ribbon-green { background: var(--emerald); color: var(--cream); transform: rotate(1.6deg) scale(1.04); margin-top: -0.4rem; }
+.cg-ribbon-track { display: flex; width: max-content; }
+.cg-ribbon-gold .cg-ribbon-track { font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: clamp(1.25rem, 2.8vw, 2.1rem); }
+.cg-ribbon-green .cg-ribbon-track { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; }
+.cg-ribbon-mark { color: var(--accent); }
+.cg-ribbon-green .cg-ribbon-mark { color: var(--sun); }
+
+/* ---------- Section wipe (diagonal, gold leading edge) ---------- */
+.cg-wipe {
+  position: absolute; inset: -10% -25%; z-index: 0; pointer-events: none;
+  background: var(--court);
+  transform: translate3d(115%, 0, 0) skewX(-14deg);
+  transition: transform 1.5s cubic-bezier(0.77, 0, 0.18, 1);
+  border-left: 2px solid var(--sun);
+}
+.cg-wipe-light { background: var(--cream); }
+html.reveal-ready [data-stage]:not(.is-revealed) > .cg-wipe { transform: translate3d(0, 0, 0) skewX(-14deg); transition: none; }
+
+/* ---------- Prayer stage ---------- */
+.cg-prayer-stage { clip-path: ellipse(160% 100% at 50% 100%); margin-top: -1px; }
+.cg-burst {
+  border-radius: 999px;
+  background: repeating-conic-gradient(rgba(254, 201, 107, 0.16) 0deg 3deg, transparent 3deg 12deg);
+  -webkit-mask-image: radial-gradient(circle, #000 0%, transparent 55%);
+  mask-image: radial-gradient(circle, #000 0%, transparent 55%);
+}
+
+/* ---------- At Alfalah ---------- */
+.cg-arch-card { overflow: hidden; border-radius: var(--arch); box-shadow: 0 0 0 8px var(--cream), 0 0 0 9px rgba(201, 168, 76, 0.7), 0 40px 80px -40px rgba(22, 51, 46, 0.55); }
+[data-reveal].is-revealed .cg-list li { animation: rise-in 0.8s var(--ease-out) both; animation-delay: calc(var(--i, 0) * 70ms + 200ms); }
+
+/* ---------- Numbers ---------- */
+.cg-stat {
+  text-align: center; padding: 3rem 1.5rem 2rem;
+  border-radius: 999px 999px 1.5rem 1.5rem;
+  border: 1px solid rgba(254, 201, 107, 0.35);
+  background: linear-gradient(180deg, rgba(254, 201, 107, 0.12), rgba(22, 51, 46, 0.75) 55%);
+}
+
+/* ---------- Mandates (arch cards) ---------- */
+.cg-mandate {
+  border-radius: 999px 999px 1.5rem 1.5rem;
+  background: var(--ivory);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  box-shadow: 0 1px 2px rgba(26, 31, 28, 0.04), 0 24px 50px -28px rgba(22, 51, 46, 0.35);
+  transition: transform 0.6s var(--ease-out), box-shadow 0.6s ease, border-color 0.6s ease;
+}
+.cg-mandate:hover { transform: translateY(-8px); border-color: rgba(201, 168, 76, 0.8); box-shadow: 0 30px 60px -28px rgba(201, 168, 76, 0.55); }
+.cg-mandate-icon { background: radial-gradient(circle, rgba(254, 201, 107, 0.55), rgba(254, 201, 107, 0.15)); box-shadow: 0 0 0 6px rgba(254, 201, 107, 0.15); }
+.cg-light::after {
+  content: ""; position: absolute; inset: auto 0 -1px; height: 30px; background: var(--court);
+  -webkit-mask: radial-gradient(30px 30px at 50% 0, transparent 97%, #000 100%) 0 0 / 60px 30px repeat-x;
+  mask: radial-gradient(30px 30px at 50% 0, transparent 97%, #000 100%) 0 0 / 60px 30px repeat-x;
+}
+
+/* ---------- Story ---------- */
+.cg-quote { font-size: clamp(1.12rem, 2.6vw, 2rem); line-height: 1.45; color: rgba(255, 255, 255, 0.92); }
+.cg-chapter[data-on] > * { animation: rise-in 1s var(--ease-out) both; }
+.cg-chapter[data-on] > *:nth-child(2) { animation-delay: 120ms; }
+.cg-pill { min-height: 44px; border-radius: 999px; padding: 0.5rem 1.1rem; font-size: 0.85rem; font-weight: 600; color: rgba(255, 255, 255, 0.8); border: 1px solid rgba(255, 255, 255, 0.25); transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease; }
+.cg-pill:hover { border-color: var(--sun); color: #fff; }
+.cg-pill[data-on] { background: var(--sun); border-color: var(--sun); color: var(--court); }
+.cg-dial-run { animation: cg-dial var(--step, 7500ms) linear both; }
+
+/* ---------- Fundraising band ---------- */
+.cg-fund { position: relative; background: linear-gradient(100deg, #f7c15a, #ffe3a3 50%, #f7c15a); }
+.cg-fund::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.55) 50%, transparent 70%);
+  transform: translate3d(-100%, 0, 0);
+}
+} /* end @layer components */
+
+/* Prayer overrides outside the layer so they beat the section's own utility background. */
+.cg-prayer-stage > section#prayer-times { background: transparent; position: relative; z-index: 1; }
+.cg-prayer-stage > section#prayer-times > .pattern-geometric { background-color: transparent; opacity: 0.3; }
+.cg-prayer-stage > section#prayer-times > .pattern-geometric + div { opacity: 0.5; }
+
+@keyframes cg-word { from { opacity: 0; transform: translate3d(0, 0.45em, 0); } to { opacity: 1; transform: none; } }
+@keyframes cg-dawn { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(0, -130%, 0); } }
+@keyframes cg-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes cg-sunrise { from { opacity: 0; transform: translate3d(-50%, 45%, 0) scale(0.7); } to { opacity: 1; transform: translate3d(-50%, 0, 0) scale(1); } }
+@keyframes cg-open { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes cg-settle { from { transform: scale(1.18); } to { transform: scale(1); } }
+@keyframes cg-dial { from { stroke-dashoffset: var(--c); } to { stroke-dashoffset: 0; } }
+@keyframes cg-marq { to { transform: translate3d(-50%, 0, 0); } }
+@keyframes cg-spin { to { rotate: 360deg; } }
+@keyframes cg-glow { 0%, 100% { opacity: 0.85; } 50% { opacity: 1; } }
+@keyframes cg-shine { 0%, 60% { transform: translate3d(-100%, 0, 0); } 100% { transform: translate3d(100%, 0, 0); } }
+
+html.motion-ready .cg-ribbon-gold .cg-ribbon-track { animation: cg-marq 46s linear infinite; }
+html.motion-ready .cg-ribbon-green .cg-ribbon-track { animation: cg-marq 38s linear infinite reverse; }
+html.motion-ready .cg-burst { animation: cg-spin 200s linear infinite; }
+html.motion-ready .cg-sun { animation: cg-sunrise 2.6s cubic-bezier(0.2, 0.7, 0.2, 1) 0.4s both, cg-glow 6s ease-in-out 3s infinite; }
+html.motion-ready .cg-fund::before { animation: cg-shine 7s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cg-word, .cg-in, .cg-rays, .cg-sun, .cg-arch, .cg-arch-img, .cg-arch-line, .cg-chapter[data-on] > *, .cg-dial-run,
+  [data-reveal].is-revealed .cg-list li,
+  html.motion-ready .cg-ribbon-track, html.motion-ready .cg-burst, html.motion-ready .cg-sun, html.motion-ready .cg-fund::before { animation: none !important; }
+  .cg-dawn, .cg-wipe { display: none; }
+  .cg-sun { transform: translate3d(-50%, 0, 0); }
+}
+
+/* ---------- Community filmstrip ---------- */
+@layer components {
+.cg-film { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.cg-film-track { display: flex; gap: 1rem; width: max-content; padding: 0 0.5rem; }
+.cg-film-item { position: relative; width: 220px; height: 280px; flex: none; overflow: hidden; border-radius: 999px 999px 1.25rem 1.25rem; box-shadow: 0 0 0 1px rgba(201, 168, 76, 0.45), 0 20px 40px -24px rgba(22, 51, 46, 0.5); }
+@media (min-width: 768px) { .cg-film-item { width: 260px; height: 330px; } }
+}
+html.motion-ready .cg-film-track { animation: cg-marq 60s linear infinite; }
+.cg-film:hover .cg-film-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { html.motion-ready .cg-film-track { animation: none; } .cg-film { overflow-x: hidden; } }

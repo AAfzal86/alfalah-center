@@ -55,7 +55,7 @@ export default function Nav() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b bg-cream/90 backdrop-blur-xl transition-[box-shadow,border-color,background-color] duration-500 ${
+      className={`sticky top-0 z-50 border-b bg-cream/[0.97] transition-[box-shadow,border-color,background-color] duration-500 ${
         scrolled || open
           ? "border-gold/25 shadow-[0_8px_30px_-12px_rgba(26,31,28,0.18)]"
           : "border-gold/15"

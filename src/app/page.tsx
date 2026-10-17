@@ -4,7 +4,12 @@ import Hero from "@/components/Hero";
 import PrayerTimes from "@/components/PrayerTimes";
 import ContactCTA from "@/components/ContactCTA";
 import Reveal from "@/components/Reveal";
-import VideoBed from "@/components/VideoBed";
+import BgVideo from "@/components/BgVideo";
+import Ribbons from "@/components/Ribbons";
+import PrayerStage from "@/components/PrayerStage";
+import Numbers from "@/components/Numbers";
+import CenterStory from "@/components/CenterStory";
+import Filmstrip from "@/components/Filmstrip";
 import { HandHeart, BookOpen, Landmark, Megaphone, ArrowRight, Phone, Mail } from "lucide-react";
 import { brand } from "@/lib/brand";
 import {
@@ -22,27 +27,27 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <PrayerTimes />
+      <Ribbons />
+      <PrayerStage>
+        <PrayerTimes />
+      </PrayerStage>
 
       {/* At Alfalah */}
-      <section className="section-y relative overflow-hidden">
-        <VideoBed
-          src="/videos/facilities.mp4"
-          poster="/videos/facilities.jpg"
-          tone="cream"
-          grain
-        />
-        <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8">
+      <section data-stage="" className="cg-section relative isolate overflow-hidden bg-cream py-24 md:py-32">
+        <BgVideo name="c-fountain" position="center 60%" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(247,243,234,0.97)_0%,rgba(247,243,234,0.9)_45%,rgba(247,243,234,0.35)_100%)] max-lg:bg-cream/90" aria-hidden />
+        <div className="cg-wipe cg-wipe-light" aria-hidden />
+        <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-10">
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <Reveal>
               <p className="eyebrow text-emerald">
                 Southeast Edmonton
               </p>
-              <h2 className="display-section mt-4 text-charcoal">At Alfalah Center</h2>
+              <h2 className="cg-h2 mt-4 text-emerald">At Alfalah Center</h2>
               <div className="gold-hairline my-6 w-24" aria-hidden />
-              <ul className="space-y-3.5">
-                {atAlfalah.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm leading-relaxed text-charcoal/85 md:text-base">
+              <ul className="cg-list space-y-3.5">
+                {atAlfalah.map((item, i) => (
+                  <li key={item} className="flex gap-3 text-sm leading-relaxed text-charcoal/85 md:text-base" style={{ ["--i" as string]: i }}>
                     <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rotate-45 bg-gold" aria-hidden />
                     <span>{item}</span>
                   </li>
@@ -66,8 +71,7 @@ export default function HomePage() {
               </div>
             </Reveal>
             <Reveal delay={0.1}>
-              <div className="photo-frame group relative aspect-[4/3]">
-                <div className="frame-corners" aria-hidden />
+              <div className="cg-arch-card group relative aspect-[4/5] lg:aspect-[4/5]">
                 <Image
                   src="/gallery/C360_2019-05-11-04-09-14-004.jpg"
                   alt="Alfalah Center building exterior"
@@ -81,19 +85,14 @@ export default function HomePage() {
         </div>
       </section>
 
+      <Numbers />
+
       {/* What We Do */}
-      <section className="section-y relative overflow-hidden">
-        <VideoBed
-          src="/videos/statement.mp4"
-          poster="/videos/statement.jpg"
-          tone="cream"
-          grain
-        />
-        <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8">
+      <section className="cg-light relative overflow-hidden bg-cream py-24 md:py-32">
+        <div className="pattern-geometric-lattice pointer-events-none absolute inset-0 opacity-[0.07]" aria-hidden />
+        <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-10">
           <Reveal>
-            <p className="eyebrow eyebrow-center flex justify-center text-emerald">
-              What We Do
-            </p>
+            <h2 className="cg-h2 text-center text-emerald">What We Do</h2>
             <div className="gold-hairline mx-auto my-6 w-24" aria-hidden />
             <p className="lead mx-auto max-w-3xl text-center text-charcoal/80">
               {whatWeDoIntro}
@@ -104,16 +103,14 @@ export default function HomePage() {
               const Icon = mandateIcons[i % mandateIcons.length];
               return (
               <Reveal key={m.title} delay={0.06 * i}>
-                <article className="card-premium flex h-full flex-col p-6">
-                  <div className="mb-6 flex items-start justify-between">
-                    <div className="icon-ring flex h-11 w-11 items-center justify-center rounded-full text-gold-bright">
-                      <Icon className="h-5 w-5" aria-hidden />
-                    </div>
-                    <span className="card-index" aria-hidden>
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
+                <article className="cg-mandate flex h-full flex-col items-center px-6 pb-8 pt-14 text-center">
+                  <div className="cg-mandate-icon flex h-14 w-14 items-center justify-center rounded-full text-emerald">
+                    <Icon className="h-6 w-6" aria-hidden />
                   </div>
-                  <h3 className="font-display text-xl font-semibold leading-snug text-emerald">{m.title}</h3>
+                  <span className="mt-4 font-display text-sm italic text-gold-deep" aria-hidden>
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-1 font-display text-xl font-semibold leading-snug text-emerald">{m.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted">{m.body}</p>
                 </article>
               </Reveal>
@@ -121,7 +118,11 @@ export default function HomePage() {
             })}
           </div>
         </div>
+        <Filmstrip />
+      
       </section>
+
+      <CenterStory />
 
       {/* Special Needs teaser */}
       <section className="section-y bg-cream">
@@ -154,17 +155,13 @@ export default function HomePage() {
       </section>
 
       {/* Change a Life + dialer */}
-      <section className="section-y relative overflow-hidden">
-        <VideoBed
-          src="/videos/cta.mp4"
-          poster="/videos/cta.jpg"
-          tone="ink"
-          lattice
-          grain
-        />
+      <section data-stage="" className="cg-section relative isolate overflow-hidden bg-[#16332e] py-24 md:py-36">
+        <BgVideo name="c-cta" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(22,51,46,0.9),rgba(22,51,46,0.7)_50%,rgba(22,51,46,0.94))]" aria-hidden />
+        <div className="cg-wipe" aria-hidden />
         <div className="relative z-10 mx-auto max-w-5xl px-5 text-center text-white md:px-8">
           <Reveal>
-            <h2 className="display-section">Get involved</h2>
+            <h2 className="cg-h2">Get <span className="cg-sun-text">involved</span></h2>
             <div className="gold-hairline mx-auto my-6 w-24" aria-hidden />
             <p className="lead mx-auto max-w-2xl text-white/85">
               {about.changeALife}
@@ -214,14 +211,14 @@ export default function HomePage() {
       </section>
 
       {/* Fundraising strip */}
-      <section className="relative overflow-hidden border-y border-gold/25 bg-cream-deep py-12 md:py-14">
-        <div className="pattern-geometric-lattice pointer-events-none absolute inset-0 opacity-[0.08]" aria-hidden />
+      <section className="cg-fund relative overflow-hidden py-14 md:py-16">
+        <div className="pattern-geometric-lattice pointer-events-none absolute inset-0 opacity-[0.12]" aria-hidden />
         <div className="relative mx-auto flex max-w-5xl flex-col items-center justify-between gap-5 px-5 text-center md:flex-row md:px-8 md:text-left">
           <div>
             <p className="font-display text-2xl font-semibold text-emerald md:text-[1.75rem]">
               Fundraising for Alfalah South Expansion
             </p>
-            <p className="mt-1 text-sm text-muted">
+            <p className="mt-1 text-sm text-emerald">
               Support the Southeast campus via DonorChoice / ICNA Edmonton.
             </p>
           </div>

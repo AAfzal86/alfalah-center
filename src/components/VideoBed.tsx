@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { prefersSaveData, useReducedMotion } from "@/lib/useReducedMotion";
+import { register } from "@/lib/videoManager";
 
 type Tone = "cream" | "emerald" | "ink";
 
@@ -60,24 +61,14 @@ export default function VideoBed({
 
   const play = canPlayVideo && !reduce;
 
+  // Joins the shared page-wide video budget (lib/videoManager): src only while among the most visible.
   useEffect(() => {
     const video = videoRef.current;
-    const root = rootRef.current;
-    if (!video || !root || !play) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && entry.intersectionRatio > 0.15) {
-          void video.play().catch(() => {});
-        } else {
-          video.pause();
-        }
-      },
-      { threshold: [0, 0.15, 0.4] },
-    );
-    observer.observe(root);
-    return () => observer.disconnect();
-  }, [play]);
+    if (!video || !play) return;
+    return register(video, () => src, (p) => {
+      if (!p) setReady(false);
+    });
+  }, [play, src]);
 
   return (
     <div ref={rootRef} aria-hidden className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`}>
@@ -97,12 +88,10 @@ export default function VideoBed({
           className="video-fade absolute inset-0 h-full w-full object-cover"
           data-ready={ready ? "true" : "false"}
           onPlaying={() => setReady(true)}
-          src={src}
-          poster={poster}
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
           tabIndex={-1}
         />
       )}
