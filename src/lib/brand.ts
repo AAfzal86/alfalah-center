@@ -45,7 +45,7 @@ export const brand = {
     padForm: "/docs/Alfalah-pre-authorized_payment_form.pdf",
   },
   hero: {
-    kicker: "Southeast Edmonton · ICNA",
+    kicker: "Southeast Edmonton",
     h1: "Welcome to Alfalah Center",
     sub: "A place for worship, learning, and community in Southeast Edmonton. Join us for prayer, programs, and service.",
     hadith:

@@ -177,8 +177,8 @@ export default function PrayerTimes() {
                 NizamOS
               </div>
               <p className="mt-2 text-sm leading-relaxed text-white/70">
-                Salah and iqamah update live from the ICNA Edmonton / Alfalah
-                Center NizamOS board in the center panel.
+                Salah and iqamah update live from the Alfalah Center Edmonton
+                NizamOS board in the center panel.
               </p>
             </RailCard>
 
@@ -267,7 +267,7 @@ export default function PrayerTimes() {
                     <div className="overflow-hidden rounded-xl bg-white ring-1 ring-emerald/15 sm:rounded-2xl">
                       <iframe
                         id={NIZAMOS_WIDGET_ID}
-                        title="ICNA Edmonton prayer times"
+                        title="Alfalah Center Edmonton prayer times"
                         src={NIZAMOS_WIDGET_SRC}
                         className="prayer-iframe block w-full max-w-full border-0"
                         loading="lazy"

@@ -35,7 +35,7 @@ export default function Ribbons() {
       <p className="sr-only">{atAlfalah.join(" ")}</p>
       <div aria-hidden>
         <Ribbon items={short} variant="gold" />
-        <Ribbon items={[brand.tagline, brand.campus, "ICNA Edmonton", brand.fullName, "Peace & Unity"]} variant="green" />
+        <Ribbon items={[brand.tagline, brand.campus, brand.fullName, "Peace & Unity"]} variant="green" />
       </div>
     </section>
   );
