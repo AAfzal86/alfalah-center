@@ -29,6 +29,10 @@ export default function HomePage() {
     <>
       <Hero />
       <Ribbons />
+      <PrayerStage>
+        <PrayerTimes />
+      </PrayerStage>
+
       {/* Program posters — sticky stack */}
       <section id="program-posters" className="cg-posters relative bg-ivory py-20 md:py-28" aria-labelledby="program-posters-title">
         <div className="mx-auto max-w-7xl px-5 md:px-10">
@@ -44,9 +48,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <PrayerStage>
-        <PrayerTimes />
-      </PrayerStage>
 
       {/* At Alfalah */}
       <section data-stage="" className="cg-section relative isolate overflow-hidden bg-cream py-24 md:py-32">
