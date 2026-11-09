@@ -168,12 +168,16 @@ body {
 }
 
 @media (max-width: 639px) {
-  .prayer-iframe-shell {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+  .prayer-frame {
+    /* Keep gold ring readable on phones without eating table width */
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--gold) 55%, transparent),
+      0 0 0 6px color-mix(in srgb, var(--emerald-deep) 55%, transparent),
+      0 0 0 7px color-mix(in srgb, var(--gold) 35%, transparent),
+      0 20px 50px rgba(0, 0, 0, 0.4);
   }
-  .prayer-iframe {
-    min-height: 520px;
+  .prayer-geo-border {
+    margin: -6px;
   }
 }
 

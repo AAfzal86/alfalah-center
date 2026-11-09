@@ -13,6 +13,7 @@ import Filmstrip from "@/components/Filmstrip";
 import PosterStack from "@/components/PosterStack";
 import { HandHeart, BookOpen, Landmark, Megaphone, ArrowRight, Phone, Mail } from "lucide-react";
 import { brand } from "@/lib/brand";
+import { getPrayerData } from "@/lib/prayer";
 import {
   atAlfalah,
   whatWeDoIntro,
@@ -24,13 +25,14 @@ import {
 
 const mandateIcons = [Megaphone, Landmark, BookOpen, HandHeart];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const prayerInitial = await getPrayerData();
   return (
     <>
       <Hero />
       <Ribbons />
       <PrayerStage>
-        <PrayerTimes />
+        <PrayerTimes initial={prayerInitial} />
       </PrayerStage>
 
       {/* Program posters — sticky stack */}
