@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/IntentLink";
 import Image from "next/image";
 import { ArrowUp, ArrowUpRight, Heart, Mail, MapPin, Navigation, Phone } from "lucide-react";
 import { brand } from "@/lib/brand";
